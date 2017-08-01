@@ -1,0 +1,8 @@
+<nav md-tab-nav-bar>
+  <a md-tab-link routerLink="/generator" routerLinkActive #rla1="routerLinkActive"
+     [active]="rla1.isActive">Генератор скрипта</a>
+  <a md-tab-link routerLink="/settings" routerLinkActive #rla2="routerLinkActive"
+     [active]="rla2.isActive">Настройки</a>
+</nav>
+
+<router-outlet></router-outlet>
