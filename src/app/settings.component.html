@@ -1,1 +1,73 @@
-<h2>Settings</h2>
+<md-card class="settings-form">
+    <md-card-title>
+        Настройки содержимого Excel файла
+    </md-card-title>
+    <md-card-content>
+        <form>
+            <section>
+                <label>ID продукта:</label>
+                <md-input-container class="settings-full-width">
+                    <input type="number" mdInput placeholder="Номер колонки"
+                        [formControl]="idColumnNumberFormControl">
+                </md-input-container>
+            </section>
+            <section>
+                <label>Остаток:</label>
+                <table class="settings-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <md-input-container class="settings-full-width">
+                                <input type="number"  mdInput placeholder="Номер колонки"
+                                    [formControl]="balanceColumnNumberFormControl">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container class="settings-full-width">
+                                <input mdInput placeholder="Код поля"
+                                    [formControl]="balanceColumnCodeFormControl">
+                            </md-input-container>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <label>Заказ:</label>
+                <table class="settings-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <md-input-container class="settings-full-width">
+                                <input type="number"  mdInput placeholder="Номер колонки"
+                                    [formControl]="orderColumnNumberFormControl">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container class="settings-full-width">
+                                <input mdInput placeholder="Код поля"
+                                    [formControl]="orderColumnCodeFormControl">
+                            </md-input-container>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <label>Реализация:</label>
+                <table class="settings-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <md-input-container class="settings-full-width">
+                                <input type="number"  mdInput placeholder="Номер колонки"
+                                    [formControl]="sellingColumnNumberFormControl">
+                            </md-input-container>
+                        </td>
+                        <td>
+                            <md-input-container class="settings-full-width">
+                                <input mdInput placeholder="Код поля"
+                                    [formControl]="sellingColumnCodeFormControl">
+                            </md-input-container>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </form>
+    </md-card-content>
+</md-card>
