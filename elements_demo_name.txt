@@ -1,0 +1,7 @@
+{
+    "цена": "SM-G955FZKDSEK_Price",
+    "бонус": "SM-G955FZKDSEK_Bonus",
+    "продажи": "SM-G955FZKDSEK_Sales",
+    "остаток": "SM-G955FZKDSEK_Stock",
+    "заказ": "SM-G955FZKDSEK_Order"
+}

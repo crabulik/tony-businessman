@@ -17,16 +17,18 @@ export class SettingsContext {
         }
         let result = new AppSettings();
         result.idColumnNumber = 1;
-        result.priceColumnNumber = 4;
-        result.priceColumnCode = '';
-        result.ratioColumnNumber = 5;
-        result.ratioColumnCode = '';
-        result.bonusColumnNumber = 6;
-        result.bonusColumnCode = '';
-        result.balanceColumnNumber = 7;
-        result.balanceColumnCode = '';
-        result.orderColumnNumber = 8;
-        result.orderColumnCode = '';
+        result.priceColumnNumber = 6;
+        result.priceColumnCode = 'Price';
+        result.ratioColumnNumber = 7;
+        result.ratioColumnCode = 'Ratio';
+        result.bonusColumnNumber = 8;
+        result.bonusColumnCode = 'Bonus';
+        result.salesColumnNumber = 9;
+        result.salesColumnCode = 'Sales"';
+        result.balanceColumnNumber = 10;
+        result.balanceColumnCode = 'Stock"';
+        result.orderColumnNumber = 11;
+        result.orderColumnCode = 'Order';
         return result;
     }
 

@@ -3,29 +3,35 @@
         Настройки содержимого Excel файла
     </md-card-title>
     <md-card-content>
-        <form>
+        <form (ngSubmit)="onSubmit()" [formGroup]="settingsForm" #formDir="ngForm">
             <section>
                 <label>ID продукта:</label>
-                <md-input-container class="settings-full-width">
-                    <input type="number" mdInput placeholder="Номер колонки"
-                        [formControl]="idColumnNumberFormControl">
-                </md-input-container>
+                <md-form-field class="settings-full-width">
+                    <input type="number" mdInput placeholder="Номер колонки" formControlName="idColumnNumber">
+                    <md-error *ngIf="settingsForm.controls.idColumnNumber.hasError('required')">
+                        Обязательное поле
+                    </md-error>
+                </md-form-field>
             </section>
             <section>
                 <label>Цена:</label>
                 <table class="settings-full-width" cellspacing="0">
                     <tr>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input type="number"  mdInput placeholder="Номер колонки"
-                                    [formControl]="priceColumnNumberFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input type="number" mdInput placeholder="Номер колонки" formControlName="priceColumnNumber">
+                                <md-error *ngIf="settingsForm.controls.priceColumnNumber.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input mdInput placeholder="Код поля"
-                                    [formControl]="priceColumnCodeFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input mdInput placeholder="Код поля" formControlName="priceColumnCode">
+                                <md-error *ngIf="settingsForm.controls.priceColumnCode.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                     </tr>
                 </table>
@@ -35,16 +41,20 @@
                 <table class="settings-full-width" cellspacing="0">
                     <tr>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input type="number"  mdInput placeholder="Номер колонки"
-                                    [formControl]="ratioColumnNumberFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input type="number" mdInput placeholder="Номер колонки" formControlName="ratioColumnNumber">
+                                <md-error *ngIf="settingsForm.controls.ratioColumnNumber.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input mdInput placeholder="Код поля"
-                                    [formControl]="ratioColumnCodeFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input mdInput placeholder="Код поля" formControlName="ratioColumnCode">
+                                <md-error *ngIf="settingsForm.controls.ratioColumnCode.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                     </tr>
                 </table>
@@ -54,16 +64,43 @@
                 <table class="settings-full-width" cellspacing="0">
                     <tr>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input type="number"  mdInput placeholder="Номер колонки"
-                                    [formControl]="bonusColumnNumberFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input type="number" mdInput placeholder="Номер колонки" formControlName="bonusColumnNumber">
+                                <md-error *ngIf="settingsForm.controls.bonusColumnNumber.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input mdInput placeholder="Код поля"
-                                    [formControl]="bonusColumnCodeFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input mdInput placeholder="Код поля" formControlName="bonusColumnCode">
+                                <md-error *ngIf="settingsForm.controls.bonusColumnCode.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <label>Продажи:</label>
+                <table class="settings-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <md-form-field class="settings-full-width">
+                                <input type="number" mdInput placeholder="Номер колонки" formControlName="salesColumnNumber">
+                                <md-error *ngIf="settingsForm.controls.salesColumnNumber.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
+                        </td>
+                        <td>
+                            <md-form-field class="settings-full-width">
+                                <input mdInput placeholder="Код поля" formControlName="salesColumnCode">
+                                <md-error *ngIf="settingsForm.controls.salesColumnCode.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                     </tr>
                 </table>
@@ -73,16 +110,20 @@
                 <table class="settings-full-width" cellspacing="0">
                     <tr>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input type="number"  mdInput placeholder="Номер колонки"
-                                    [formControl]="balanceColumnNumberFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input type="number" mdInput placeholder="Номер колонки" formControlName="balanceColumnNumber">
+                                <md-error *ngIf="settingsForm.controls.balanceColumnNumber.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input mdInput placeholder="Код поля"
-                                    [formControl]="balanceColumnCodeFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input mdInput placeholder="Код поля" formControlName="balanceColumnCode">
+                                <md-error *ngIf="settingsForm.controls.balanceColumnCode.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                     </tr>
                 </table>
@@ -92,16 +133,20 @@
                 <table class="settings-full-width" cellspacing="0">
                     <tr>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input type="number"  mdInput placeholder="Номер колонки"
-                                    [formControl]="orderColumnNumberFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input type="number" mdInput placeholder="Номер колонки" formControlName="orderColumnNumber">
+                                <md-error *ngIf="settingsForm.controls.orderColumnNumber.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                         <td>
-                            <md-input-container class="settings-full-width">
-                                <input mdInput placeholder="Код поля"
-                                    [formControl]="orderColumnCodeFormControl">
-                            </md-input-container>
+                            <md-form-field class="settings-full-width">
+                                <input mdInput placeholder="Код поля" formControlName="orderColumnCode">
+                                <md-error *ngIf="settingsForm.controls.orderColumnCode.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
                         </td>
                     </tr>
                 </table>
@@ -113,18 +158,21 @@
                         <td>
                             <md-input-container class="settings-full-width">
                                 <input type="number"  mdInput placeholder="Номер колонки"
-                                    [formControl]="sellingColumnNumberFormControl">
+                                    formControlName="sellingColumnNumber">
                             </md-input-container>
                         </td>
                         <td>
                             <md-input-container class="settings-full-width">
                                 <input mdInput placeholder="Код поля"
-                                    [formControl]="sellingColumnCodeFormControl">
+                                    formControlName="sellingColumnCode">
                             </md-input-container>
                         </td>
                     </tr>
                 </table>
             </section> -->
+            <section>
+                <button type="submit" md-raised-button color="primary">Сохранить</button>
+            </section>
         </form>
     </md-card-content>
 </md-card>

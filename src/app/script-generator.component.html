@@ -1,1 +1,27 @@
-<h2>Script Generator</h2>
+<md-card class="settings-form">
+    <md-card-title>
+        Генератор скрипта
+    </md-card-title>
+    <md-card-content>
+        <div *ngIf="isConfigured; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+            <div class="form-group">
+                <label>Табличный файл отчета: </label>
+                <input type="file" name="file" (change)="handleUpload($event.target.files)" multiple="false">
+            </div>
+            <div *ngIf="isShowScriptBlock">
+                <md-form-field class="script-full-width">
+                    <textarea #scriptTestBlock mdInput placeholder="Скрипт" [(ngModel)]="script" rows="15"></textarea>
+                </md-form-field>
+                <button md-raised-button color="primary" (click)="copyToClipboard(scriptTestBlock)">Скопировать скрипт</button>
+            </div>
+
+
+        </ng-template>
+        <ng-template #elseBlock>
+            <h3>
+                Генератор скрипта для отчета недоконфигурирован. Перейдите в настройки генератора!
+            </h3>
+        </ng-template>
+    </md-card-content>
+</md-card>

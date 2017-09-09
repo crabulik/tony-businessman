@@ -10,4 +10,6 @@ export class AppSettings {
     balanceColumnCode: string;
     orderColumnNumber: number;
     orderColumnCode: string;
+    salesColumnNumber: number;
+    salesColumnCode: string;
 }

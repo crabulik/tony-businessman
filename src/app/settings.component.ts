@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppSettings } from './models/app-settings';
 import { SettingsContext } from './services/settings-context.service';
+import { MdSnackBar } from '@angular/material';
 
 @Component({
   templateUrl: './settings.component.html',
@@ -10,47 +10,40 @@ import { SettingsContext } from './services/settings-context.service';
   providers: [SettingsContext]
 })
 export class SettingsComponent {
-  constructor(private settingsContext: SettingsContext) { }
+  constructor(private settingsContext: SettingsContext, public snackBar: MdSnackBar) { }
 
-  idColumnNumberFormControl = new FormControl('', [
-    Validators.required]);
-  priceColumnNumberFormControl = new FormControl('', [
-    Validators.required]);
-  priceColumnCodeFormControl = new FormControl('', [
-    Validators.required]);
-  ratioColumnNumberFormControl = new FormControl('', [
-    Validators.required]);
-  ratioColumnCodeFormControl = new FormControl('', [
-    Validators.required]);
-  bonusColumnNumberFormControl = new FormControl('', [
-    Validators.required]);
-  bonusColumnCodeFormControl = new FormControl('', [
-    Validators.required]);
-  balanceColumnNumberFormControl = new FormControl('', [
-    Validators.required]);
-  balanceColumnCodeFormControl = new FormControl('', [
-    Validators.required]);
-  orderColumnNumberFormControl = new FormControl('', [
-    Validators.required]);
-  orderColumnCodeFormControl = new FormControl('', [
-    Validators.required]);
-  /*sellingColumnNumberFormControl = new FormControl('', [
-    Validators.required]);
-  sellingColumnCodeFormControl = new FormControl('', [
-    Validators.required]);*/
+  settingsForm: FormGroup;
 
   ngOnInit() {
     let settings = this.settingsContext.loadSettings();
-    this.idColumnNumberFormControl.setValue(settings.idColumnNumber);
-    this.priceColumnNumberFormControl.setValue(settings.priceColumnNumber);
-    this.priceColumnCodeFormControl.setValue(settings.priceColumnCode);
-    this.ratioColumnNumberFormControl.setValue(settings.ratioColumnNumber);
-    this.ratioColumnCodeFormControl.setValue(settings.ratioColumnCode);
-    this.bonusColumnNumberFormControl.setValue(settings.bonusColumnNumber);
-    this.bonusColumnCodeFormControl.setValue(settings.bonusColumnCode);
-    this.balanceColumnNumberFormControl.setValue(settings.balanceColumnNumber);
-    this.balanceColumnCodeFormControl.setValue(settings.balanceColumnCode);
-    this.orderColumnNumberFormControl.setValue(settings.orderColumnNumber);
-    this.orderColumnCodeFormControl.setValue(settings.orderColumnCode);
+    this.settingsForm = new FormGroup({
+      'idColumnNumber': new FormControl(settings.idColumnNumber, Validators.required),
+      'priceColumnNumber': new FormControl(settings.priceColumnNumber, Validators.required),
+      'priceColumnCode': new FormControl(settings.priceColumnCode, Validators.required),
+      'ratioColumnNumber': new FormControl(settings.ratioColumnNumber, Validators.required),
+      'ratioColumnCode': new FormControl(settings.ratioColumnCode, Validators.required),
+      'bonusColumnNumber': new FormControl(settings.bonusColumnNumber, Validators.required),
+      'bonusColumnCode': new FormControl(settings.bonusColumnCode, Validators.required),
+      'balanceColumnNumber': new FormControl(settings.balanceColumnNumber, Validators.required),
+      'balanceColumnCode': new FormControl(settings.balanceColumnCode, Validators.required),
+      'orderColumnNumber': new FormControl(settings.orderColumnNumber, Validators.required),
+      'orderColumnCode': new FormControl(settings.orderColumnCode, Validators.required),
+      'salesColumnNumber': new FormControl(settings.salesColumnNumber, Validators.required),
+      'salesColumnCode': new FormControl(settings.salesColumnCode, Validators.required)
+    });
+  }
+
+  onSubmit() {
+    if(!this.settingsForm.valid) {
+      this.snackBar.open('Ошибки в настройках!', null, {
+        duration: 3000,
+      });
+    } else {
+      const formModel = this.settingsForm.value;
+      this.settingsContext.saveSettings(
+        formModel as AppSettings
+      );
+    }
+    
   }
 }
