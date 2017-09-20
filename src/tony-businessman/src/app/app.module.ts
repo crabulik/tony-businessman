@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { MaterialModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdTabsModule, MdSnackBarModule, MdFormFieldModule, MdInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SettingsComponent } from './settings.component';
@@ -24,7 +24,7 @@ import { ScriptGeneratorComponent } from './script-generator.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule,
+    MdButtonModule, MdCardModule, MdTabsModule, MdSnackBarModule, MdFormFieldModule, MdInputModule,
     BrowserAnimationsModule,
     AppRoutingModule
   ],

@@ -24,9 +24,9 @@ export class SettingsContext {
         result.bonusColumnNumber = 8;
         result.bonusColumnCode = 'Bonus';
         result.salesColumnNumber = 9;
-        result.salesColumnCode = 'Sales"';
+        result.salesColumnCode = 'Sales';
         result.balanceColumnNumber = 10;
-        result.balanceColumnCode = 'Stock"';
+        result.balanceColumnCode = 'Stock';
         result.orderColumnNumber = 11;
         result.orderColumnCode = 'Order';
         return result;
