@@ -29,6 +29,8 @@ export class SettingsContext {
         result.balanceColumnCode = 'Stock';
         result.orderColumnNumber = 11;
         result.orderColumnCode = 'Order';
+        result.creditColumnNumber = 12;
+        result.creditColumnCode = 'Credit';
         return result;
     }
 

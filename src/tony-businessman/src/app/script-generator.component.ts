@@ -63,6 +63,7 @@ export class ScriptGeneratorComponent {
       result.price = item[settings.priceColumnNumber - 1];
       result.ratio = item[settings.ratioColumnNumber - 1];
       result.sales = item[settings.salesColumnNumber - 1];
+      result.credit = item[settings.creditColumnNumber - 1];
       return result;
     });
     return this.generateScript(parsedData, settings);
@@ -102,6 +103,7 @@ function fillReportData(data, options) {
     fillReportCell(element.itemId, options.balanceColumnCode, element.balance);
     fillReportCell(element.itemId, options.orderColumnCode, element.order);
     fillReportCell(element.itemId, options.salesColumnCode, element.sales);
+    fillReportCell(element.itemId, options.creditColumnCode, element.credit);
   });
 }
 

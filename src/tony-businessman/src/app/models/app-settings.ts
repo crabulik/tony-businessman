@@ -12,4 +12,6 @@ export class AppSettings {
     orderColumnCode: string;
     salesColumnNumber: number;
     salesColumnCode: string;
+    creditColumnNumber: number;
+    creditColumnCode: string;
 }

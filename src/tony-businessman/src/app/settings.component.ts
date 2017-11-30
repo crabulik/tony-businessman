@@ -29,7 +29,9 @@ export class SettingsComponent {
       'orderColumnNumber': new FormControl(settings.orderColumnNumber, Validators.required),
       'orderColumnCode': new FormControl(settings.orderColumnCode, Validators.required),
       'salesColumnNumber': new FormControl(settings.salesColumnNumber, Validators.required),
-      'salesColumnCode': new FormControl(settings.salesColumnCode, Validators.required)
+      'salesColumnCode': new FormControl(settings.salesColumnCode, Validators.required),
+      'creditColumnNumber': new FormControl(settings.creditColumnNumber, Validators.required),
+      'creditColumnCode': new FormControl(settings.creditColumnCode, Validators.required)
     });
   }
 

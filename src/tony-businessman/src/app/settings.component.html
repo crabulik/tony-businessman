@@ -151,6 +151,29 @@
                     </tr>
                 </table>
             </section>
+            <section>
+                <label>Кредит:</label>
+                <table class="settings-full-width" cellspacing="0">
+                    <tr>
+                        <td>
+                            <md-form-field class="settings-full-width">
+                                <input type="number" mdInput placeholder="Номер колонки" formControlName="creditColumnNumber">
+                                <md-error *ngIf="settingsForm.controls.creditColumnNumber.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
+                        </td>
+                        <td>
+                            <md-form-field class="settings-full-width">
+                                <input mdInput placeholder="Код поля" formControlName="creditColumnCode">
+                                <md-error *ngIf="settingsForm.controls.creditColumnCode.hasError('required')">
+                                    Обязательное поле
+                                </md-error>
+                            </md-form-field>
+                        </td>
+                    </tr>
+                </table>
+            </section>
             <!--<section>
                 <label>Реализация:</label>
                 <table class="settings-full-width" cellspacing="0">

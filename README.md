@@ -2,7 +2,7 @@
 The project for my brother to help him with his reports.
 
 
-This application is configured to run on Google Cloud Platfor.
+This application is configured to run on Google Cloud Platform.
 
 To publish application:
 

@@ -6,4 +6,5 @@ export class ReportElement {
     balance: string;
     order: string;
     sales: string;
+    credit: string;
 }

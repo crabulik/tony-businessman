@@ -3,5 +3,6 @@
     "бонус": "SM-G955FZKDSEK_Bonus",
     "продажи": "SM-G955FZKDSEK_Sales",
     "остаток": "SM-G955FZKDSEK_Stock",
-    "заказ": "SM-G955FZKDSEK_Order"
+    "заказ": "SM-G955FZKDSEK_Order",
+    "кредит": "SM-G955FZKDSEK_Credit"
 }
